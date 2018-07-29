@@ -90,8 +90,8 @@ typedef char *n_string;
 
 typedef struct
 {
-	size_t len;
-	size_t cap;
+    size_t len;
+    size_t cap;
 } n_string_header;
 
 #define N_STRING_HEADER(str) ((n_string_header *)str - 1)
@@ -301,7 +301,7 @@ string_new_space_for(n_string str, size_t add_len)
     void *ptr, *new_ptr;
     ptr = (char *)str - sizeof(n_string_header);
     old_size = sizeof(n_string_header) + string_len(str) + 1;
-	new_size = sizeof(n_string_header) + new_len + 1;
+    new_size = sizeof(n_string_header) + new_len + 1;
 
     new_ptr = string_realloc(ptr, old_size, new_size);
     if(new_ptr == 0) return 0;
@@ -475,7 +475,7 @@ string_remove_chars(n_string str, char const *chars)
     int pos = 0;
 
     while(pos < string_len(str))
-	{
+    {
         bool found = false;
         
         pos = string_find_chars(str, chars, 0);
@@ -486,7 +486,7 @@ string_remove_chars(n_string str, char const *chars)
         }
         
         if(!found) break;
-	}
+    }
 #else
     int pos = 0;
     int len = cstring_len(chars);
@@ -545,9 +545,9 @@ string_consume_while(char **source, const char *string)
     }
 
     n_string result = new_string_len(*source, length);
-	*source += length;
+    *source += length;
 
-	return result;
+    return result;
 }
 
 #endif // N_STRING_H
