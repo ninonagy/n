@@ -1,2 +1,2 @@
 # n
-A small C helper library
+A small C helper libraries
