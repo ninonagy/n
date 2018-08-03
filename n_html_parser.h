@@ -1,13 +1,3 @@
-/*
-TODO:
-- error reporting
-    - on loading xml or html file
-- add skip variable to parser struct
-- add parser.is_eof
-- add n_alloc
-https://github.com/google/gumbo-parser
-*/
-
 #ifndef N_HTML_PARSER_H
 #define N_HTML_PARSER_H
 
